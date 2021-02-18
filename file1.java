@@ -4,7 +4,7 @@ class HelloWorld {
         System.out.println("Hello World");
         System.out.println("Here are some mods from branch file1Mods");
         System.out.println("Some more mods from file1Mods");
-        System.out.println("Made some changes on myBranch2 but on GitPractice1")
+        System.out.println("Made some changes on myBranch2 but on GitPractice2 NOW")
     }
 
 }
