@@ -1,3 +1,5 @@
+package javaProjectExample.src;
+
 public class testFile {
 
     public static String saySomething() {
