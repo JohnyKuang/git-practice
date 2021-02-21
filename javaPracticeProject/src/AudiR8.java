@@ -1,22 +1,31 @@
-public class AudiR8 {
-    private static int wheelSize = 33; // class variable; changing this changes all
-    private static String manufacturer = "Audi Japan";
-    public String color; // instance variable; only changes the particular instance of the class
+import java.util.ArrayList;
+
+public class AudiR8 extends Audi {
+
+    private ArrayList<String> r8ownerList = new ArrayList<String>();;
 
     public AudiR8() {
+        super("black", "white");
     }
 
-    public void paintCar(String newColor) {
-        color = newColor;
+    public static void useV8() {
+        System.out.println("GO VROOOM VROOM");
     }
 
-    public static int changeWheelSize(int size) { // static methods can be accessed both by instances and non-instances
-        wheelSize = size;
+    public int changeWheelSize(int size) {
+        System.out.println("Rim size before: " + super.wheelSize);
+        System.out.println("These new rims rule!!!");
+        super.wheelSize = size;
         return wheelSize;
     }
 
-    public String getManufacturer() {
-        return manufacturer;
+    public ArrayList<String> addNewCustomer(String customerName) { // overrides the super
+        super.addNewCustomer(customerName);
+        this.r8ownerList.add(customerName);
+        System.out.println("R8 Owner List:");
+        for (String customer : r8ownerList) {
+            System.out.println(customer);
+        }
+        return this.r8ownerList;
     }
-
 }
