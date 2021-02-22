@@ -1,4 +1,8 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -133,4 +137,120 @@ public class App {
         }
         return prev;
     }
+
+    public int search(int[] nums, int target) {// search rotated sorted array
+        return searchHelper(nums, target, 0, nums.length - 1);
+    }
+
+    public int searchHelper(int[] nums, int target, int start, int end) {
+        int mid = (start + end) / 2;
+        if (start > end) {
+            return -1;
+        }
+        if (nums[mid] == target) {
+            return mid;
+        }
+        if (nums[start] <= nums[mid]) { // left half sorted
+            if (nums[start] <= target && target <= nums[mid]) {
+                return searchHelper(nums, target, start, mid - 1);
+            } else {
+                return searchHelper(nums, target, mid + 1, end);
+            }
+        } else {
+            if (nums[mid] <= target && target <= nums[end]) {
+                return searchHelper(nums, target, mid + 1, end);
+            } else {
+                return searchHelper(nums, target, start, mid - 1);
+            }
+        }
+    }
+
+    public int climbStairs(int n) {
+        HashMap<Integer, Integer> memo = new HashMap<>();
+        return climbStairsHelper(n, memo);
+    }
+
+    public int climbStairsHelper(int n, HashMap<Integer, Integer> memo) {
+        if (n == 1 || n == 0) {
+            return 1;
+        }
+        if (memo.containsKey(n)) {
+            return memo.get(n);
+        }
+
+        memo.put(n, climbStairsHelper(n - 1, memo) + climbStairsHelper(n - 2, memo));
+
+        return memo.get(n);
+    }
+
+    public List<List<Integer>> subsets(int[] nums) {
+        if (nums.length == 0) {
+            return new ArrayList<>();
+        }
+        List<List<Integer>> previousSets = subsets(Arrays.copyOfRange(nums, 0, nums.length - 1));
+        List<List<Integer>> newSets = new ArrayList<>();
+        if (previousSets.isEmpty()) {
+            previousSets.add(new ArrayList<>());
+        }
+
+        for (List<Integer> set : previousSets) {
+            List<Integer> newSet = new ArrayList<>(set);
+            newSet.add(nums[nums.length - 1]);
+            newSets.add(newSet);
+        }
+        List<List<Integer>> resultSet = new ArrayList<>(previousSets);
+        resultSet.addAll(newSets);
+        return resultSet;
+
+    }
+
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int num1p = m - 1;
+        int num2p = n - 1;
+        int num1ResultP = nums1.length - 1;
+        while (0 <= num1p && 0 <= num2p) {
+            if (nums1[num1p] < nums2[num2p]) {
+                nums1[num1ResultP] = nums2[num2p--];
+            } else {
+                nums1[num1ResultP] = nums1[num1p--];
+            }
+            num1ResultP--;
+        }
+        // append the rest
+        if (num1p < 0) {
+            while (0 <= num2p) {
+                nums1[num1ResultP--] = nums2[num2p--];
+            }
+        } else {
+            while (0 <= num1p) {
+                nums1[num1ResultP--] = nums1[num1p--];
+            }
+        }
+    }
+
+    public boolean isBalanced(TreeNode root) {
+        return checkHeight(root) != -1;
+    }
+
+    public int checkHeight(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int leftHeight = checkHeight(root.left);
+        if (leftHeight == -1) { // -1 means imbalanced
+            return -1;
+        }
+        int rightHeight = checkHeight(root.right);
+        if (rightHeight == -1) {
+            return -1;
+        }
+
+        if (Math.abs(leftHeight - rightHeight) > 1) {
+            return -1;
+        } else {
+            return Math.max(leftHeight, rightHeight) + 1;
+        }
+
+    }
+
 }
