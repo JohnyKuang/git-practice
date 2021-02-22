@@ -270,4 +270,50 @@ public class App {
         }
     }
 
+    public TreeNode increasingBST(TreeNode root) {
+        // first do inorder traversal to get an array and then make a new tree from that
+        // array
+        List<Integer> vals = new ArrayList<>();
+        inorder(root, vals);
+        TreeNode newRoot = new TreeNode(), current = newRoot;
+        for (Integer v : vals) {
+            current.right = new TreeNode(v);
+            current = current.right;
+        }
+        return newRoot.right;
+    }
+
+    public void inorder(TreeNode node, List<Integer> vals) {
+        if (node == null) {
+            return;
+        }
+        inorder(node.left, vals);
+        vals.add(node.val);
+        inorder(node.right, vals);
+    }
+
+    public int rob(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        }
+        if (nums.length == 1) {
+            return nums[0];
+        }
+        int[] total = new int[nums.length];
+        total[0] = nums[0];
+        if (nums[0] <= nums[1]) {
+            total[1] = nums[1];
+        } else {
+            total[1] = nums[0];
+        }
+        for (int i = 2; i < nums.length; i++) {
+            if (total[i - 2] + nums[i] <= total[i - 1]) {
+                total[i] = total[i - 1];
+            } else {
+                total[i] = total[i - 2] + nums[i];
+            }
+        }
+        return total[total.length - 1];
+    }
+
 }
