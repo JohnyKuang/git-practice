@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.List;
 
 public class App {
@@ -52,49 +51,49 @@ public class App {
     // return slow;
     // }
 
-    // public static int[] sortedSquares(int[] nums) {
-    // int numsLen = nums.length;
-    // int[] result = new int[numsLen];
-    // int negPointer = 0;
+    public static int[] sortedSquares(int[] nums) {
+        int numsLen = nums.length;
+        int[] result = new int[numsLen];
+        int negPointer = 0;
 
-    // if (nums[nums.length - 1] >= 0){ //if whole list isn't negative
-    // while (nums[negPointer] < 0) {
-    // negPointer ++;
-    // }
-    // }
+        if (nums[nums.length - 1] >= 0) { // if whole list isn't negative
+            while (nums[negPointer] < 0) {
+                negPointer++;
+            }
+        }
 
-    // int posPointer = negPointer;
-    // negPointer --;
-    // int resultPointer = 0;
+        int posPointer = negPointer;
+        negPointer--;
+        int resultPointer = 0;
 
-    // //merge neg and positive sides
-    // while ((0 <= negPointer) && (posPointer < numsLen)){
-    // if (Math.abs(nums[negPointer]) <= Math.abs(nums[posPointer])) {
-    // result[resultPointer] = nums[negPointer] * nums[negPointer];
-    // negPointer --;
-    // } else {
-    // result[resultPointer] = nums[posPointer] * nums[posPointer];
-    // posPointer ++;
-    // }
-    // resultPointer ++;
-    // }
+        // merge neg and positive sides
+        while ((0 <= negPointer) && (posPointer < numsLen)) {
+            if (Math.abs(nums[negPointer]) <= Math.abs(nums[posPointer])) {
+                result[resultPointer] = nums[negPointer] * nums[negPointer];
+                negPointer--;
+            } else {
+                result[resultPointer] = nums[posPointer] * nums[posPointer];
+                posPointer++;
+            }
+            resultPointer++;
+        }
 
-    // //append the rest
-    // if (0 <= negPointer) {
-    // while (0 <= negPointer) {
-    // result[resultPointer] = nums[negPointer] * nums[negPointer];
-    // negPointer --;
-    // resultPointer ++;
-    // }
-    // } else {
-    // while (posPointer < numsLen) {
-    // result[resultPointer] = nums[posPointer] * nums[posPointer];
-    // posPointer ++;
-    // resultPointer ++;
-    // }
-    // }
-    // return result;
-    // }
+        // append the rest
+        if (0 <= negPointer) {
+            while (0 <= negPointer) {
+                result[resultPointer] = nums[negPointer] * nums[negPointer];
+                negPointer--;
+                resultPointer++;
+            }
+        } else {
+            while (posPointer < numsLen) {
+                result[resultPointer] = nums[posPointer] * nums[posPointer];
+                posPointer++;
+                resultPointer++;
+            }
+        }
+        return result;
+    }
 
     // public static ListNode swapPairs(ListNode head) {
     // if (head == null) {
@@ -314,6 +313,22 @@ public class App {
             }
         }
         return total[total.length - 1];
+    }
+
+    public int[] sortArrayByParityII(int[] A) {
+        int j = 1;
+        for (int i = 0; i < A.length; i += 2) {
+            if (A[i] % 2 == 1) {
+                while (A[j] % 2 != 0) {
+                    j += 2;
+                }
+                // swap
+                int temp = A[i];
+                A[i] = A[j];
+                A[j] = temp;
+            }
+        }
+        return A;
     }
 
 }
