@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class AudiR8 extends Audi {
 
-    private ArrayList<String> r8ownerList = new ArrayList<String>();;
+    private static ArrayList<String> r8ownerList = new ArrayList<String>();;
 
     public AudiR8() {
         super("black", "white");

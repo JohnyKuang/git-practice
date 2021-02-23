@@ -1,5 +1,7 @@
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Scanner;
+
 import package1.*;
 
 public class App {
@@ -19,7 +21,8 @@ public class App {
         // System.out.println("Number of Audi owners: " +
         // someRandomAudi.addNewCustomer("Pam").size());
 
-        exceptionCatching();
+        // exceptionCatching();
+        switchStatements();
 
     }
 
@@ -60,9 +63,32 @@ public class App {
         } catch (ArithmeticException e) {
             System.out.println(e);
         } catch (Exception e) {
+            System.out.println("We can run this line instead of program blowing up");
+        } catch (Throwable e) { // catches error OR exception
             System.out.println(e);
         }
         // throw new ArrayIndexOutOfBoundsException("don't do that"); //throw an
         // exception instead of catching one
+    }
+
+    public static void switchStatements() {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Please input your letter grade: ");
+        String letterGrade = keyboard.next();
+        keyboard.close();
+        switch (letterGrade) {
+            case "A":
+                System.out.println("Excellent!");
+                break;
+            case "B":
+                System.out.println("Great!");
+                break;
+            case "C":
+                System.out.println("Satisfactory");
+                break;
+            default:
+                System.out.println("Fail");
+                break;
+        }
     }
 }
