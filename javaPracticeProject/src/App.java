@@ -1,22 +1,21 @@
-import java.util.Arrays;
 import java.util.Scanner;
+import package1.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        // scannerFunction();
-        // primVsRefComparison();
+        scannerFunction();
+        primVsRefComparison();
 
-        //// playing with classes
-        // AudiR8 aAudiR8 = new AudiR8();
-        // // Audi aAudiR8 = new AudiR8(); //legal since AudiR8 is subclass of Audi
-        // aAudiR8.useV8();
-        // aAudiR8.addNewCustomer("Jim");
-        // System.out.println("New rim size on R8: " + aAudiR8.changeWheelSize(50));
-        // Audi someRandomAudi = new Audi("red", "blue");
-        // System.out.println("Default rim size: " + someRandomAudi.wheelSize);
-        // someRandomAudi.addNewCustomer("Jan");
-        // System.out.println("Number of Audi owners: " +
-        //// someRandomAudi.addNewCustomer("Pam").size());
+        // playing with classes
+        AudiR8 aAudiR8 = new AudiR8();
+        // Audi aAudiR8 = new AudiR8(); //legal since AudiR8 is subclass of Audi
+        aAudiR8.useV8();
+        aAudiR8.addNewCustomer("Jim");
+        System.out.println("New rim size on R8: " + aAudiR8.changeWheelSize(50));
+        Audi someRandomAudi = new Audi("red", "blue");
+        System.out.println("Default rim size: " + someRandomAudi.wheelSize);
+        someRandomAudi.addNewCustomer("Jan");
+        System.out.println("Number of Audi owners: " + someRandomAudi.addNewCustomer("Pam").size());
 
     }
 
