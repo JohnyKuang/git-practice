@@ -12,6 +12,7 @@ public class AudiR8 extends Audi {
         System.out.println("GO VROOOM VROOM");
     }
 
+    @Override
     public int changeWheelSize(int size) {
         System.out.println("Rim size before: " + super.wheelSize);
         System.out.println("These new rims rule!!!");
