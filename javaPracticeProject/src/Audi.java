@@ -40,11 +40,11 @@ public class Audi {
     }
 
     public ArrayList<String> addNewCustomer(String customerName) {
-        this.ownerList.add(customerName);
+        ownerList.add(customerName);
         System.out.println("Audi Owner List:");
         for (String customer : ownerList) {
             System.out.println(customer);
         }
-        return this.ownerList;
+        return ownerList;
     }
 }
