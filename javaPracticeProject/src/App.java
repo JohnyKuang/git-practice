@@ -1,4 +1,5 @@
 import java.io.InputStream;
+import java.lang.ProcessBuilder.Redirect.Type;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -6,7 +7,7 @@ import package1.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        // scannerFunction();
+        scannerFunction();
         // primVsRefComparison();
 
         // // playing with classes
@@ -22,7 +23,7 @@ public class App {
         // someRandomAudi.addNewCustomer("Pam").size());
 
         // exceptionCatching();
-        switchStatements();
+        // switchStatements();
 
     }
 
@@ -33,7 +34,21 @@ public class App {
         System.out.print("Please enter your height: ");
         double height = keyboard.nextDouble();
         System.out.print("Please enter your age: ");
-        int age = keyboard.nextInt();
+        int age = 0;
+        boolean valid = false;
+        while (!valid) {
+            try {
+                age = keyboard.nextInt();
+                if (age >= 0) {
+                    valid = true;
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+                keyboard.nextLine();
+                System.out.print("Please input a number: ");
+            }
+        }
+
         keyboard.close();
         System.out.println(
                 "My name is " + fullName + ", I am " + Math.abs(height) + "cm tall and " + age + " years old.");
