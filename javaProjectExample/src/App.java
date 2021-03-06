@@ -1,3 +1,5 @@
+package javaProjectExample.src;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -7,14 +9,14 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         //// finding middle of linked list
-        // ListNode node5 = new ListNode(5);
-        // ListNode node4 = new ListNode(4, node5);
-        // ListNode node3 = new ListNode(3, node4);
-        // ListNode node2 = new ListNode(2, node3);
-        // ListNode node1 = new ListNode(1, node2);
-        // ListNode midNode = new ListNode();
-        // midNode = getMiddleNode(node1);
-        // System.out.println("Middle node: " + midNode.val);
+         ListNode node5 = new ListNode(5);
+         ListNode node4 = new ListNode(4, node5);
+         ListNode node3 = new ListNode(3, node4);
+         ListNode node2 = new ListNode(2, node3);
+         ListNode node1 = new ListNode(1, node2);
+         ListNode midNode = new ListNode();
+         midNode = getMiddleNode(node1);
+         System.out.println("Middle node: " + midNode.val);
 
         //// swap nodes in pairs
         // node1 = swapPairs(node1);
@@ -42,14 +44,14 @@ public class App {
         // System.out.println(Arrays.toString(sortedNums));
 
     }
-    // public static ListNode getMiddleNode(ListNode head) {
-    // ListNode slow = head, fast=head;
-    // while (fast != null && fast.next != null) {
-    // fast = fast.next.next;
-    // slow = slow.next;
-    // }
-    // return slow;
-    // }
+     public static ListNode getMiddleNode(ListNode head) {
+     ListNode slow = head, fast=head;
+     while (fast != null && fast.next != null) {
+     fast = fast.next.next;
+     slow = slow.next;
+     }
+     return slow;
+     }
 
     public static int[] sortedSquares(int[] nums) {
         int numsLen = nums.length;

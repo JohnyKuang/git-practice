@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19c80de7-3a5d-4c01-b33e-8caf522b1d22" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file1.java" beforeDir="false" afterPath="$PROJECT_DIR$/file1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/javaPracticeProject/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaPracticeProject/src/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javaPracticeProject/src/package1/Audi.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaPracticeProject/src/package1/Audi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javaPracticeProject/src/package1/AudiR8.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaPracticeProject/src/package1/AudiR8.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/javaProjectExample/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaProjectExample/src/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/javaProjectExample/src/ListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaProjectExample/src/ListNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/javaProjectExample/src/TreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/javaProjectExample/src/TreeNode.java" afterDir="false" />
@@ -75,13 +75,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -102,7 +104,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615015097930</updated>
-      <workItem from="1615015100277" duration="7207000" />
+      <workItem from="1615015100277" duration="7666000" />
+      <workItem from="1615069121012" duration="180000" />
     </task>
     <servers />
   </component>
@@ -131,5 +134,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixed up the project by adding proper packages and imports at the top" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed up the project by adding proper packages and imports at the top" />
   </component>
 </project>

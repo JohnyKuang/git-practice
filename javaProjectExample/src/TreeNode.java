@@ -1,3 +1,5 @@
+package javaProjectExample.src;
+
 public class TreeNode {
     public int val;
     public TreeNode left;
