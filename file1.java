@@ -5,7 +5,8 @@ class HelloWorld {
         System.out.println("Hello World");
         System.out.println("Here are some mods from branch file1Mods");
         System.out.println("Some more mods from file1Mods");
-        System.out.println("Some changes made on this windows computer");
+        System.out.println("Here are some changes made locally on mac");
+
     }
 
 }
